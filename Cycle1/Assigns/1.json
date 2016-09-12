@@ -1,0 +1,13 @@
+{
+  "IO": {
+    "Input": "1 2 3 4 0",
+    "Output": "2 4 6 8"
+  },
+  "Professor": {
+    "Email": "nighthawk@halverto.com",
+    "Name": "Tyler Flaagan"
+  },
+  "Student": [
+
+  ]
+}
