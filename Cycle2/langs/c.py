@@ -9,7 +9,7 @@ from os.path import isfile, join
 def execute(file, path, js):
     output = ''
     args = ''
-    Input = js["IO"]["Input"]
+    Input = js["io"]["input"]
     try:
         subprocess.check_output(["gcc", file], shell=False)
         start = time.time()
@@ -18,7 +18,7 @@ def execute(file, path, js):
         stdout_val = p.communicate(Input.encode(encoding='UTF-8'))[0]
         end = time.time()
         subprocess.call(['rm', join(path,'a.out')])
-        return stdout_val
+        t = end - start
+        return (stdout_val, t)
     except: 
         print("Error -", file)
-    

@@ -5,6 +5,19 @@
 * Script Name: grade.py
 * Description: This script takes input created by an instructor or professor and input from the student. Once the student that gives the specified input and proper output from 
 
+## Edition 2 Additions
+
+* Code base refactoring.
+* Implemented local Mongodb for storage instead of flat files.
+* Fixed problems with Python lang. 
+* Added running time info.
+* HTML output for given assignment.
+* Fixed argument issue pointed out by @Spirotot.
+* Added script to help instructors build assignments.
+* Moss perl script integration.
+* Script to show currently available assignments.
+* Script to show students results for a given assignment.
+
 ## Use Case and Background Info
 
 Often times while teaching a class the most burdoning task is grading. For some it is the least liked portion of teaching a class. It can take hours on end to manually compile, execute, and review code. This script will attempt to shorten that time greatly for any that use it. 
@@ -18,6 +31,7 @@ The installation instructions assume the following dependencies are met:
 * The machine running the script has the correct version of Python running.
 * The user has permissions to execute the script
 * Program must be submitted using the following naming convention: `lastname_programID.extension`
+* The machine must have mongo running
 
 To set up and run the script, perform the following:
 
@@ -27,18 +41,41 @@ To set up and run the script, perform the following:
 `> python3 grade.py <arguments>`
 
 
-## Possible Future Work
-* Add in more output options (CSV, HTML, XML).
-* Integrate @Spirotot's utility to automatically upload score and feedback to D2L.
-* Create cron job/script that watches all assignments due dates and runs the grading script on the due date.
-	* This would allow for emailing results to instructor or professor or even possibly uploading scores without professor or instructor intervention. Full automation from sumbission to published grade in D2L.
-* Integrate MOSS, this may be slightly more difficult since there isn't a Python version of the software.
-	* <https://theory.stanford.edu/~aiken/moss/>
-* Create web front end to handle assignment creation/grade reporting and student assignment submission.
-* Add support for linking other libraries such as linking math library in C.
-* Add support for more languages.
-* Possibly move away from static JSON files to a type of DB.
-* Different styles of grading could be added (Not sure what those would be at this point)
-* Allow for both versions of Python for all of you who have not updated... :(
+Extra:
 
-* I kept changing the overall flow of the script throughout writing so a refactoring is necessary at this point.
+To launch the assign builder
+
+`> python3 assignBuilder.py`
+
+To launch assign finder
+
+`> python3 assignFinder.py`
+
+## Possible Future Work
+
+* Create cron job/script that watches all assignments due dates and runs the grading script on the due date.
+	* This would allow for emailing results to instructor or professor or even possibly uploading scores without professor or instructor intervention. Full automation from submission to published grade in D2L.
+* Added code to kill infinite looping code.
+* Integrate @Spirotot's utility to automatically upload score and feedback to D2L.
+* Different styles of grading could be added. (Still haven't come up with any)
+* Better error checking in assign builder script. Input and if there is already an assign by that name.
+* Better file storage/handling for assignments.
+* Add hours/minutes to date time selection for specific due times.
+* Error handling for when assignment is not found
+* Added checks for programs that don't compile in C and C++.
+* With the way this has been developing, I want to incorporate all of it into a django site. Since I haven't worked with django before and that is a much steeper learning curve. Not sure if I'll get around to that. This would solve a few problems that are going to come up soon I think. 
+
+## Resources
+
+https://docs.mongodb.com/getting-started/python/client/
+
+## Other stuff
+
+What's needed for local Mongo:
+
+
+Install the OSX version of mongo
+
+Install the Python mongo driver
+
+    pip install pymongo
