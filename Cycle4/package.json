@@ -1,0 +1,26 @@
+{
+  "name": "Test",
+  "version": "1.0.0",
+  "description": "Test",
+  "main": "test.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "emptygif": "^0.1.1",
+    "express": "^4.14.0",
+    "express-stormpath": "^3.1.6",
+    "forms": "^1.2.0",
+    "jade": "^1.11.0",
+    "msfnode": "^0.5.1",
+    "msgpack-lite": "^0.1.26",
+    "multer": "^1.2.0",
+    "xtend": "^4.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
